@@ -1,0 +1,12 @@
+C:\Users\Predrag\source\repos\AutomehanicarskaRadnja\AutomehanicarskaRadnjaClassLibrary\bin\Debug\AutomehanicarskaRadnjaClassLibrary.dll.config
+C:\Users\Predrag\source\repos\AutomehanicarskaRadnja\AutomehanicarskaRadnjaClassLibrary\bin\Debug\AutomehanicarskaRadnjaClassLibrary.dll
+C:\Users\Predrag\source\repos\AutomehanicarskaRadnja\AutomehanicarskaRadnjaClassLibrary\bin\Debug\AutomehanicarskaRadnjaClassLibrary.pdb
+C:\Users\Predrag\source\repos\AutomehanicarskaRadnja\AutomehanicarskaRadnjaClassLibrary\bin\Debug\EntityFramework.dll
+C:\Users\Predrag\source\repos\AutomehanicarskaRadnja\AutomehanicarskaRadnjaClassLibrary\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Predrag\source\repos\AutomehanicarskaRadnja\AutomehanicarskaRadnjaClassLibrary\bin\Debug\EntityFramework.xml
+C:\Users\Predrag\source\repos\AutomehanicarskaRadnja\AutomehanicarskaRadnjaClassLibrary\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Predrag\source\repos\AutomehanicarskaRadnja\AutomehanicarskaRadnjaClassLibrary\obj\Debug\AutomehanicarskaRadnjaClassLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Predrag\source\repos\AutomehanicarskaRadnja\AutomehanicarskaRadnjaClassLibrary\obj\Debug\AutomehanicarskaRadnjaClassLibrary.csproj.CopyComplete
+C:\Users\Predrag\source\repos\AutomehanicarskaRadnja\AutomehanicarskaRadnjaClassLibrary\obj\Debug\AutomehanicarskaRadnjaClassLibrary.dll
+C:\Users\Predrag\source\repos\AutomehanicarskaRadnja\AutomehanicarskaRadnjaClassLibrary\obj\Debug\AutomehanicarskaRadnjaClassLibrary.pdb
+C:\Users\Predrag\source\repos\AutomehanicarskaRadnja\AutomehanicarskaRadnjaClassLibrary\obj\Debug\AutomehanicarskaRadnjaClassLibrary.csprojAssemblyReference.cache

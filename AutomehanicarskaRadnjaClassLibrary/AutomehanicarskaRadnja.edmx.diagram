@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9da33e6d343a4036998eb2b95c39dc85" Name="Diagram1" >
+        <EntityTypeShape EntityType="AutomehanicarskaRadnja.Automobil" Width="1.5" PointX="3" PointY="3.75" />
+        <EntityTypeShape EntityType="AutomehanicarskaRadnja.Zaposleni" Width="1.5" PointX="7.875" PointY="0.5" />
+        <EntityTypeShape EntityType="AutomehanicarskaRadnja.Posao" Width="1.5" PointX="3" PointY="0.75" />
+        <EntityTypeShape EntityType="AutomehanicarskaRadnja.TehnickiPregled" Width="1.5" PointX="5.25" PointY="3.25" />
+        <EntityTypeShape EntityType="AutomehanicarskaRadnja.Kvar" Width="1.5" PointX="0.75" PointY="4" />
+        <EntityTypeShape EntityType="AutomehanicarskaRadnja.Garaza" Width="1.5" PointX="7.5" PointY="3.75" />
+        <EntityTypeShape EntityType="AutomehanicarskaRadnja.Materijal" Width="1.5" PointX="7.5" PointY="6.75" />
+        <EntityTypeShape EntityType="AutomehanicarskaRadnja.Alat" Width="1.5" PointX="0.75" PointY="1.125" />
+        <EntityTypeShape EntityType="AutomehanicarskaRadnja.Oprema" Width="1.5" PointX="5.25" PointY="9" />
+        <AssociationConnector Association="AutomehanicarskaRadnja.AutomobilTehnickiPregled" />
+        <AssociationConnector Association="AutomehanicarskaRadnja.KvarAutomobil" />
+        <AssociationConnector Association="AutomehanicarskaRadnja.PosaoTehnickiPregled" />
+        <AssociationConnector Association="AutomehanicarskaRadnja.AlatPosao" />
+        <AssociationConnector Association="AutomehanicarskaRadnja.OpremaGaraza" />
+        <AssociationConnector Association="AutomehanicarskaRadnja.TehnickiPregledMaterijal" />
+        <AssociationConnector Association="AutomehanicarskaRadnja.ZaposleniTehnickiPregled" />
+        <AssociationConnector Association="AutomehanicarskaRadnja.GarazaTehnickiPregled" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AutomehanicarskaRadnjaStoreContainer" CdmEntityContainer="AutomehanicarskaRadnjaContainer">
+    <EntitySetMapping Name="Automobils">
+      <EntityTypeMapping TypeName="IsTypeOf(AutomehanicarskaRadnja.Automobil)">
+        <MappingFragment StoreEntitySet="Automobils">
+          <ScalarProperty Name="AutomobilId" ColumnName="AutomobilId" />
+          <ScalarProperty Name="MarkaAutomobila" ColumnName="MarkaAutomobila" />
+          <ScalarProperty Name="GodinaProizvodnje" ColumnName="GodinaProizvodnje" />
+          <ScalarProperty Name="BrojSasije" ColumnName="BrojSasije" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zaposlenis">
+      <EntityTypeMapping TypeName="IsTypeOf(AutomehanicarskaRadnja.Zaposleni)">
+        <MappingFragment StoreEntitySet="Zaposlenis">
+          <ScalarProperty Name="ZaposleniId" ColumnName="ZaposleniId" />
+          <ScalarProperty Name="ImeZaposlenog" ColumnName="ImeZaposlenog" />
+          <ScalarProperty Name="PrezimeZaposlenog" ColumnName="PrezimeZaposlenog" />
+          <ScalarProperty Name="JMBGZaposlenog" ColumnName="JMBGZaposlenog" />
+          <ScalarProperty Name="TipZaposlenog" ColumnName="TipZaposlenog" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Posaos">
+      <EntityTypeMapping TypeName="IsTypeOf(AutomehanicarskaRadnja.Posao)">
+        <MappingFragment StoreEntitySet="Posaos">
+          <ScalarProperty Name="PosaoId" ColumnName="PosaoId" />
+          <ScalarProperty Name="PredvidjenoTrajanje" ColumnName="PredvidjenoTrajanje" />
+          <ScalarProperty Name="NazivPosla" ColumnName="NazivPosla" />
+          <ScalarProperty Name="CenaPosla" ColumnName="CenaPosla" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TehnickiPregleds">
+      <EntityTypeMapping TypeName="IsTypeOf(AutomehanicarskaRadnja.TehnickiPregled)">
+        <MappingFragment StoreEntitySet="TehnickiPregleds">
+          <ScalarProperty Name="TehnickiPregledId" ColumnName="TehnickiPregledId" />
+          <ScalarProperty Name="DatumIVreme" ColumnName="DatumIVreme" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="AutomobilAutomobilId" ColumnName="AutomobilAutomobilId" />
+          <ScalarProperty Name="ZaposleniZaposleniId" ColumnName="ZaposleniZaposleniId" />
+          <ScalarProperty Name="GarazaGarazaId" ColumnName="GarazaGarazaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kvars">
+      <EntityTypeMapping TypeName="IsTypeOf(AutomehanicarskaRadnja.Kvar)">
+        <MappingFragment StoreEntitySet="Kvars">
+          <ScalarProperty Name="KvarId" ColumnName="KvarId" />
+          <ScalarProperty Name="MestoKvara" ColumnName="MestoKvara" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Garazas">
+      <EntityTypeMapping TypeName="IsTypeOf(AutomehanicarskaRadnja.Garaza)">
+        <MappingFragment StoreEntitySet="Garazas">
+          <ScalarProperty Name="GarazaId" ColumnName="GarazaId" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Broj" ColumnName="Broj" />
+          <ScalarProperty Name="TehnickiPregledTehnickiPregledId" ColumnName="TehnickiPregledTehnickiPregledId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Materijals">
+      <EntityTypeMapping TypeName="IsTypeOf(AutomehanicarskaRadnja.Materijal)">
+        <MappingFragment StoreEntitySet="Materijals">
+          <ScalarProperty Name="MaterijalId" ColumnName="MaterijalId" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="RaspolozivocStanje" ColumnName="RaspolozivocStanje" />
+          <ScalarProperty Name="CenaPoKomadu" ColumnName="CenaPoKomadu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Alats">
+      <EntityTypeMapping TypeName="IsTypeOf(AutomehanicarskaRadnja.Alat)">
+        <MappingFragment StoreEntitySet="Alats">
+          <ScalarProperty Name="AlatId" ColumnName="AlatId" />
+          <ScalarProperty Name="TipAlata" ColumnName="TipAlata" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Opremas">
+      <EntityTypeMapping TypeName="IsTypeOf(AutomehanicarskaRadnja.Oprema)">
+        <MappingFragment StoreEntitySet="Opremas">
+          <ScalarProperty Name="OpremaId" ColumnName="OpremaId" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="KvarAutomobil" TypeName="AutomehanicarskaRadnja.KvarAutomobil" StoreEntitySet="KvarAutomobil">
+      <EndProperty Name="Kvar">
+        <ScalarProperty Name="KvarId" ColumnName="Kvars_KvarId" />
+      </EndProperty>
+      <EndProperty Name="Automobil">
+        <ScalarProperty Name="AutomobilId" ColumnName="Automobils_AutomobilId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PosaoTehnickiPregled" TypeName="AutomehanicarskaRadnja.PosaoTehnickiPregled" StoreEntitySet="PosaoTehnickiPregled">
+      <EndProperty Name="Posao">
+        <ScalarProperty Name="PosaoId" ColumnName="Posaos_PosaoId" />
+      </EndProperty>
+      <EndProperty Name="TehnickiPregled">
+        <ScalarProperty Name="TehnickiPregledId" ColumnName="TehnickiPregleds_TehnickiPregledId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="AlatPosao" TypeName="AutomehanicarskaRadnja.AlatPosao" StoreEntitySet="AlatPosao">
+      <EndProperty Name="Alat">
+        <ScalarProperty Name="AlatId" ColumnName="Alats_AlatId" />
+      </EndProperty>
+      <EndProperty Name="Posao">
+        <ScalarProperty Name="PosaoId" ColumnName="Posaos_PosaoId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="OpremaGaraza" TypeName="AutomehanicarskaRadnja.OpremaGaraza" StoreEntitySet="OpremaGaraza">
+      <EndProperty Name="Oprema">
+        <ScalarProperty Name="OpremaId" ColumnName="Opremas_OpremaId" />
+      </EndProperty>
+      <EndProperty Name="Garaza">
+        <ScalarProperty Name="GarazaId" ColumnName="Garazas_GarazaId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TehnickiPregledMaterijal" TypeName="AutomehanicarskaRadnja.TehnickiPregledMaterijal" StoreEntitySet="TehnickiPregledMaterijal">
+      <EndProperty Name="TehnickiPregled">
+        <ScalarProperty Name="TehnickiPregledId" ColumnName="TehnickiPregleds_TehnickiPregledId" />
+      </EndProperty>
+      <EndProperty Name="Materijal">
+        <ScalarProperty Name="MaterijalId" ColumnName="Materijals_MaterijalId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="51c612cc537541e48621b68e0d39e97e" Name="Diagram1" >
+        <EntityTypeShape EntityType="AutomehanicarskaRadnjaDB.Automobil" Width="1.5" PointX="4.5" PointY="5.875" />
+        <EntityTypeShape EntityType="AutomehanicarskaRadnjaDB.Zaposleni" Width="1.5" PointX="4.25" PointY="2.875" />
+        <EntityTypeShape EntityType="AutomehanicarskaRadnjaDB.Posao" Width="1.5" PointX="8.625" PointY="7.375" />
+        <EntityTypeShape EntityType="AutomehanicarskaRadnjaDB.TehnickiPregled" Width="1.5" PointX="1.625" PointY="7.5" />
+        <AssociationConnector Association="AutomehanicarskaRadnjaDB.PosaoTehnickiPregled" />
+        <AssociationConnector Association="AutomehanicarskaRadnjaDB.AutomobilTehnickiPregled" />
+        <EntityTypeShape EntityType="AutomehanicarskaRadnjaDB.Kvar" Width="1.5" PointX="6.875" PointY="5.875" />
+        <AssociationConnector Association="AutomehanicarskaRadnjaDB.KvarAutomobil" />
+        <EntityTypeShape EntityType="AutomehanicarskaRadnjaDB.Garaza" Width="1.5" PointX="4.125" PointY="9.875" />
+        <EntityTypeShape EntityType="AutomehanicarskaRadnjaDB.Materijal" Width="1.5" PointX="1.5" PointY="12.25" />
+        <EntityTypeShape EntityType="AutomehanicarskaRadnjaDB.Alat" Width="1.5" PointX="12.375" PointY="7.75" />
+        <EntityTypeShape EntityType="AutomehanicarskaRadnjaDB.Oprema" Width="1.5" PointX="6.75" PointY="10.125" />
+        <AssociationConnector Association="AutomehanicarskaRadnjaDB.AlatPosao" />
+        <AssociationConnector Association="AutomehanicarskaRadnjaDB.TehnickiPregledMaterijal" />
+        <AssociationConnector Association="AutomehanicarskaRadnjaDB.TehnickiPregledGaraza" />
+        <AssociationConnector Association="AutomehanicarskaRadnjaDB.OpremaGaraza" />
+        <AssociationConnector Association="AutomehanicarskaRadnjaDB.ZaposleniPosao" ManuallyRouted="true" >
+          <ConnectorPoint PointX="5.75" PointY="3.2838421062208849" />
+          <ConnectorPoint PointX="7.541666666666667" PointY="3.2838421062208845" />
+          <ConnectorPoint PointX="7.708333333333333" PointY="3.2838421062208849" />
+          <ConnectorPoint PointX="8.8854146666666658" PointY="3.2838421062208845" />
+          <ConnectorPoint PointX="9.0520813333333336" PointY="3.2838421062208849" />
+          <ConnectorPoint PointX="9.375" PointY="3.2838421062208849" />
+          <ConnectorPoint PointX="9.375" PointY="7.375" />
+        </AssociationConnector>
+        <AssociationConnector Association="AutomehanicarskaRadnjaDB.ZaposleniTehnickiPregled" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

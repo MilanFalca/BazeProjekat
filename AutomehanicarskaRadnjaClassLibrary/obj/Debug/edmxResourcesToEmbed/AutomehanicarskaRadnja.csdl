@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="AutomehanicarskaRadnja" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="AutomehanicarskaRadnjaContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Automobils" EntityType="AutomehanicarskaRadnja.Automobil" />
+    <EntitySet Name="Zaposlenis" EntityType="AutomehanicarskaRadnja.Zaposleni" />
+    <EntitySet Name="Posaos" EntityType="AutomehanicarskaRadnja.Posao" />
+    <EntitySet Name="TehnickiPregleds" EntityType="AutomehanicarskaRadnja.TehnickiPregled" />
+    <EntitySet Name="Kvars" EntityType="AutomehanicarskaRadnja.Kvar" />
+    <EntitySet Name="Garazas" EntityType="AutomehanicarskaRadnja.Garaza" />
+    <EntitySet Name="Materijals" EntityType="AutomehanicarskaRadnja.Materijal" />
+    <EntitySet Name="Alats" EntityType="AutomehanicarskaRadnja.Alat" />
+    <EntitySet Name="Opremas" EntityType="AutomehanicarskaRadnja.Oprema" />
+    <AssociationSet Name="AutomobilTehnickiPregled" Association="AutomehanicarskaRadnja.AutomobilTehnickiPregled">
+      <End Role="Automobil" EntitySet="Automobils" />
+      <End Role="TehnickiPregled" EntitySet="TehnickiPregleds" />
+    </AssociationSet>
+    <AssociationSet Name="KvarAutomobil" Association="AutomehanicarskaRadnja.KvarAutomobil">
+      <End Role="Kvar" EntitySet="Kvars" />
+      <End Role="Automobil" EntitySet="Automobils" />
+    </AssociationSet>
+    <AssociationSet Name="PosaoTehnickiPregled" Association="AutomehanicarskaRadnja.PosaoTehnickiPregled">
+      <End Role="Posao" EntitySet="Posaos" />
+      <End Role="TehnickiPregled" EntitySet="TehnickiPregleds" />
+    </AssociationSet>
+    <AssociationSet Name="AlatPosao" Association="AutomehanicarskaRadnja.AlatPosao">
+      <End Role="Alat" EntitySet="Alats" />
+      <End Role="Posao" EntitySet="Posaos" />
+    </AssociationSet>
+    <AssociationSet Name="OpremaGaraza" Association="AutomehanicarskaRadnja.OpremaGaraza">
+      <End Role="Oprema" EntitySet="Opremas" />
+      <End Role="Garaza" EntitySet="Garazas" />
+    </AssociationSet>
+    <AssociationSet Name="TehnickiPregledMaterijal" Association="AutomehanicarskaRadnja.TehnickiPregledMaterijal">
+      <End Role="TehnickiPregled" EntitySet="TehnickiPregleds" />
+      <End Role="Materijal" EntitySet="Materijals" />
+    </AssociationSet>
+    <AssociationSet Name="ZaposleniTehnickiPregled" Association="AutomehanicarskaRadnja.ZaposleniTehnickiPregled">
+      <End Role="Zaposleni" EntitySet="Zaposlenis" />
+      <End Role="TehnickiPregled" EntitySet="TehnickiPregleds" />
+    </AssociationSet>
+    <AssociationSet Name="GarazaTehnickiPregled" Association="AutomehanicarskaRadnja.GarazaTehnickiPregled">
+      <End Role="Garaza" EntitySet="Garazas" />
+      <End Role="TehnickiPregled" EntitySet="TehnickiPregleds" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Automobil">
+    <Key>
+      <PropertyRef Name="AutomobilId" />
+    </Key>
+    <Property Name="AutomobilId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MarkaAutomobila" Type="String" Nullable="false" />
+    <Property Name="GodinaProizvodnje" Type="DateTime" Nullable="false" />
+    <Property Name="BrojSasije" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="TehnickiPregleds" Relationship="AutomehanicarskaRadnja.AutomobilTehnickiPregled" FromRole="Automobil" ToRole="TehnickiPregled" />
+    <NavigationProperty Name="Kvars" Relationship="AutomehanicarskaRadnja.KvarAutomobil" FromRole="Automobil" ToRole="Kvar" />
+  </EntityType>
+  <EntityType Name="Zaposleni">
+    <Key>
+      <PropertyRef Name="ZaposleniId" />
+    </Key>
+    <Property Name="ZaposleniId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ImeZaposlenog" Type="String" Nullable="false" />
+    <Property Name="PrezimeZaposlenog" Type="String" Nullable="false" />
+    <Property Name="JMBGZaposlenog" Type="Int32" Nullable="false" />
+    <Property Name="TipZaposlenog" Type="String" Nullable="false" />
+    <NavigationProperty Name="TehnickiPregled" Relationship="AutomehanicarskaRadnja.ZaposleniTehnickiPregled" FromRole="Zaposleni" ToRole="TehnickiPregled" />
+  </EntityType>
+  <EntityType Name="Posao">
+    <Key>
+      <PropertyRef Name="PosaoId" />
+    </Key>
+    <Property Name="PosaoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PredvidjenoTrajanje" Type="Int32" Nullable="false" />
+    <Property Name="NazivPosla" Type="String" Nullable="false" />
+    <Property Name="CenaPosla" Type="Double" Nullable="false" />
+    <NavigationProperty Name="TehnickiPregleds" Relationship="AutomehanicarskaRadnja.PosaoTehnickiPregled" FromRole="Posao" ToRole="TehnickiPregled" />
+    <NavigationProperty Name="Alats" Relationship="AutomehanicarskaRadnja.AlatPosao" FromRole="Posao" ToRole="Alat" />
+  </EntityType>
+  <EntityType Name="TehnickiPregled">
+    <Key>
+      <PropertyRef Name="TehnickiPregledId" />
+    </Key>
+    <Property Name="TehnickiPregledId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DatumIVreme" Type="DateTime" Nullable="false" />
+    <Property Name="Status" Type="AutomehanicarskaRadnja.Status" Nullable="false" />
+    <Property Name="Opis" Type="String" Nullable="false" />
+    <Property Name="AutomobilAutomobilId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Automobil" Relationship="AutomehanicarskaRadnja.AutomobilTehnickiPregled" FromRole="TehnickiPregled" ToRole="Automobil" />
+    <NavigationProperty Name="Posaos" Relationship="AutomehanicarskaRadnja.PosaoTehnickiPregled" FromRole="TehnickiPregled" ToRole="Posao" />
+    <NavigationProperty Name="Materijals" Relationship="AutomehanicarskaRadnja.TehnickiPregledMaterijal" FromRole="TehnickiPregled" ToRole="Materijal" />
+    <NavigationProperty Name="Zaposleni" Relationship="AutomehanicarskaRadnja.ZaposleniTehnickiPregled" FromRole="TehnickiPregled" ToRole="Zaposleni" />
+    <Property Name="ZaposleniZaposleniId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Garaza" Relationship="AutomehanicarskaRadnja.GarazaTehnickiPregled" FromRole="TehnickiPregled" ToRole="Garaza" />
+    <Property Name="GarazaGarazaId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Kvar">
+    <Key>
+      <PropertyRef Name="KvarId" />
+    </Key>
+    <Property Name="KvarId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MestoKvara" Type="String" Nullable="false" />
+    <Property Name="Opis" Type="String" Nullable="false" />
+    <NavigationProperty Name="Automobils" Relationship="AutomehanicarskaRadnja.KvarAutomobil" FromRole="Kvar" ToRole="Automobil" />
+  </EntityType>
+  <EntityType Name="Garaza">
+    <Key>
+      <PropertyRef Name="GarazaId" />
+    </Key>
+    <Property Name="GarazaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Naziv" Type="String" Nullable="false" />
+    <Property Name="Broj" Type="Int32" Nullable="false" />
+    <Property Name="TehnickiPregledTehnickiPregledId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Opremas" Relationship="AutomehanicarskaRadnja.OpremaGaraza" FromRole="Garaza" ToRole="Oprema" />
+    <NavigationProperty Name="TehnickiPregled" Relationship="AutomehanicarskaRadnja.GarazaTehnickiPregled" FromRole="Garaza" ToRole="TehnickiPregled" />
+  </EntityType>
+  <EntityType Name="Materijal">
+    <Key>
+      <PropertyRef Name="MaterijalId" />
+    </Key>
+    <Property Name="MaterijalId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Naziv" Type="String" Nullable="false" />
+    <Property Name="RaspolozivocStanje" Type="Int32" Nullable="false" />
+    <Property Name="CenaPoKomadu" Type="Double" Nullable="false" />
+    <NavigationProperty Name="TehnickiPregleds" Relationship="AutomehanicarskaRadnja.TehnickiPregledMaterijal" FromRole="Materijal" ToRole="TehnickiPregled" />
+  </EntityType>
+  <EntityType Name="Alat">
+    <Key>
+      <PropertyRef Name="AlatId" />
+    </Key>
+    <Property Name="AlatId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TipAlata" Type="String" Nullable="false" />
+    <NavigationProperty Name="Posaos" Relationship="AutomehanicarskaRadnja.AlatPosao" FromRole="Alat" ToRole="Posao" />
+  </EntityType>
+  <EntityType Name="Oprema">
+    <Key>
+      <PropertyRef Name="OpremaId" />
+    </Key>
+    <Property Name="OpremaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Naziv" Type="String" Nullable="false" />
+    <NavigationProperty Name="Garazas" Relationship="AutomehanicarskaRadnja.OpremaGaraza" FromRole="Oprema" ToRole="Garaza" />
+  </EntityType>
+  <Association Name="AutomobilTehnickiPregled">
+    <End Type="AutomehanicarskaRadnja.Automobil" Role="Automobil" Multiplicity="1" />
+    <End Type="AutomehanicarskaRadnja.TehnickiPregled" Role="TehnickiPregled" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Automobil">
+        <PropertyRef Name="AutomobilId" />
+      </Principal>
+      <Dependent Role="TehnickiPregled">
+        <PropertyRef Name="AutomobilAutomobilId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="KvarAutomobil">
+    <End Type="AutomehanicarskaRadnja.Kvar" Role="Kvar" Multiplicity="*" />
+    <End Type="AutomehanicarskaRadnja.Automobil" Role="Automobil" Multiplicity="*" />
+  </Association>
+  <Association Name="PosaoTehnickiPregled">
+    <End Type="AutomehanicarskaRadnja.Posao" Role="Posao" Multiplicity="*" />
+    <End Type="AutomehanicarskaRadnja.TehnickiPregled" Role="TehnickiPregled" Multiplicity="*" />
+  </Association>
+  <Association Name="AlatPosao">
+    <End Type="AutomehanicarskaRadnja.Alat" Role="Alat" Multiplicity="*" />
+    <End Type="AutomehanicarskaRadnja.Posao" Role="Posao" Multiplicity="*" />
+  </Association>
+  <Association Name="OpremaGaraza">
+    <End Type="AutomehanicarskaRadnja.Oprema" Role="Oprema" Multiplicity="*" />
+    <End Type="AutomehanicarskaRadnja.Garaza" Role="Garaza" Multiplicity="*" />
+  </Association>
+  <Association Name="TehnickiPregledMaterijal">
+    <End Type="AutomehanicarskaRadnja.TehnickiPregled" Role="TehnickiPregled" Multiplicity="*" />
+    <End Type="AutomehanicarskaRadnja.Materijal" Role="Materijal" Multiplicity="*" />
+  </Association>
+  <Association Name="ZaposleniTehnickiPregled">
+    <End Type="AutomehanicarskaRadnja.Zaposleni" Role="Zaposleni" Multiplicity="1" />
+    <End Type="AutomehanicarskaRadnja.TehnickiPregled" Role="TehnickiPregled" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Zaposleni">
+        <PropertyRef Name="ZaposleniId" />
+      </Principal>
+      <Dependent Role="TehnickiPregled">
+        <PropertyRef Name="ZaposleniZaposleniId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EnumType Name="Status">
+    <Member Name="TRENUTNO" />
+    <Member Name="ZAVRSENO" />
+    <Member Name="SLEDI" />
+  </EnumType>
+  <Association Name="GarazaTehnickiPregled">
+    <End Type="AutomehanicarskaRadnja.Garaza" Role="Garaza" Multiplicity="1" />
+    <End Type="AutomehanicarskaRadnja.TehnickiPregled" Role="TehnickiPregled" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Garaza">
+        <PropertyRef Name="GarazaId" />
+      </Principal>
+      <Dependent Role="TehnickiPregled">
+        <PropertyRef Name="GarazaGarazaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
